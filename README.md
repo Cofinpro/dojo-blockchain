@@ -25,6 +25,8 @@ Die Credentials für die API sind:
 * User: multichainrpc
 * Pass: cofinpro
 
+Alle Daten und Logs landen im `multichaini`-Verzeichnis auf dem Host, so dass ihr sie auch außerhalb der VM betrachten könnt.
+
 ## Links
 
 * [Multichain](http://www.multichain.com)
