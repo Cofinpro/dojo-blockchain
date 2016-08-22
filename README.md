@@ -24,3 +24,9 @@ Anschließend läuft die Multichain-RPC-API auf [http://localhost:4250](http://l
 Die Credentials für die API sind:
 * User: multichainrpc
 * Pass: cofinpro
+
+## Links
+
+* [Multichain](http://www.multichain.com)
+* [Multichain API](http://www.multichain.com/developers/json-rpc-api/)
+* [Multichain-Explorer](https://github.com/MultiChain/multichain-explorer)
