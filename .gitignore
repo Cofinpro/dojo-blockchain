@@ -4,3 +4,4 @@
 multichain/*/*
 
 !multichain/*.conf
+/.project
