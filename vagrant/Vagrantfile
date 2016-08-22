@@ -120,6 +120,7 @@ Vagrant.configure("2") do |config|
     unzip /tmp/multichain-exlorer.zip -d /home/vagrant/
 	mv multichain-explorer-master multichain-explorer && cd multichain-explorer
     python setup.py install --user
+    cp /home/vagrant/.multichain/multichain-explorer.conf /home/vagrant/multichain-explorer/cofinpro.conf
   SHELL
 
   config.vm.provision "shell", privileged:false, inline: <<-SHELL
@@ -129,11 +130,12 @@ Vagrant.configure("2") do |config|
       multichain-util create cofinpro
     fi
     cp $MULTICHAIN_HOME/multichain.conf $MULTICHAIN_HOME/cofinpro/
+  SHELL
 
-    multichaind cofinpro -daemon
+  config.vm.provision "shell", run:"always", privileged:false, inline: "multichaind cofinpro -daemon"
 
-    cp $MULTICHAIN_HOME/multichain-explorer.conf /home/vagrant/multichain-explorer/cofinpro.conf
+  config.vm.provision "shell", run:"always", privileged:false, inline: <<-SHELL
     cd /home/vagrant/multichain-explorer
-    nohup python -m Mce.abe --config cofinpro.conf & 
+    nohup python -m Mce.abe --config cofinpro.conf 0<&- &>/dev/null & 
   SHELL
 end
