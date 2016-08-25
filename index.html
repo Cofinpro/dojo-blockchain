@@ -4,18 +4,19 @@
     <title>Coding Dojo - Blockchain</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style type="text/css">
-      body { font-family: Verdana, Helvetica, sans-serif; }
+      body { font-family: Verdana, Helvetica, sans-serif;}
       h1, h2, h3 {
         font-family: Verdana, Helvetica, sans-serif;
         font-size: 2.5em;
       }
       .remark-code, .remark-inline-code { font-family: Consolas, Courier; }
       .remark-container { background-color: white; }
+      .remark-slide-content { font-size: 2em;}
       .remark-slide-content:after {
         content: ""; position: absolute;
         top: 30px; right: 10px; height: 100px; width: 15%;
         background-repeat: no-repeat; background-size: contain; background-image: url('img/logo.png');
-     }	
+     }
     </style>
   </head>
   <body onload="var slideshow = remark.create({ ratio : '16:9' });">
@@ -29,40 +30,29 @@ class: center, middle
 
 # Unser finsterer Plan
 
-1. Das Thema
-2. Die Technologie
-3. Das Ziel
-4. Backlog
+* Ziel: verstehen, ob und wie sich Blockchain einsetzten lässt
+* Thema: Abbilden der Mitarbeiteraktien in einer Blockchain
+    * Permissive: nur Mitarbeiter dürfen zugreifen
+    * Ausgabe von Aktien durch Cofinpro
+* GUI-Prototyp zum
+    * Kaufen/Verkaufen
+    * Kontostand
 
 ---
 
-# Das Thema
+# Bonus
 
-* Bullet-Point
-* More
-* Even More
+* Ausschließen ausgeschiedener Mitarbeiter
+* Rückkauf von Aktien nach Ausscheiden
+* Generieren des Aktienbuchs: wer hat wieviele Aktien
 
 ---
 
 # Die Technologie
 
----
-
-# Das Ziel
-
----
-
-Backlog (eher Epics als User Stories)
-
-- initiales Setup
-- Handel von einzelnen Aktien
-- Frontend/ Visualisierung: Wie erklären wir Oma Erna verständlich, wie "diese Blockchain" funktoniert? 
-- Abbildung der Aktionärsvereinbarung
-	- Handel nur für Mitarbeiter
-	- (automatischer?) Rückkauf bei Ausscheiden und nach einem Jahr
-- Ermittlung der Divide pro Aktionär
-- Ermittlung des durchschnittlichen Kurses im letzten Geschäftsjahr
-- Abbildung der geänderten Aktionärsvereinbarung (d.h. insbesondere: unterschiedliche Aktionärsvereinbarungen je nach Datum des Aktienerwerbs)
+* Multichain (oder eine andere Chain)
+    * weil nah an BTC
+* ${JS-Framework}
 
     </textarea>
     <script type="text/javascript" src="remark-0.13.min.js">
