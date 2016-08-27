@@ -23,6 +23,14 @@ class MultiChainService {
     return this.wrap(multichain.listAddressTransactions, {address: address});
   }
 
+  issueAsset(requestData) {
+    return this.wrap(multichain.issue, requestData);
+  }
+
+  issueMoreAssets(requestData) {
+    return this.wrap(multichain.issueMore, requestData);
+  }
+
   wrap(fnct, params) {
     var defer = this.$q.defer();
     fnct(params, (err, payload) => {

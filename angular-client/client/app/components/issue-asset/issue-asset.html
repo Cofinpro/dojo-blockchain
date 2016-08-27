@@ -1,0 +1,54 @@
+<div class="container">
+  <div>
+    <h1>Multichain Admin Client</h1>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">Issue Asset</div>
+    <div class="panel-body">
+
+      <div class="form">
+        <form name="issue-asset">
+
+          <label>Asset Name:
+            {{name}}</label>
+          <input name="asset-name" type="text" class='form-control' ng-model="name"/>
+
+          <label>Asset Amount:
+            {{amount}}</label>
+          <input name="asset-amount" type="number" class='form-control' ng-model="amount"/>
+
+          <label>Asset Address:
+            {{address}}</label>
+          <input name="asset-address" type="text" class='form-control' ng-model="address"/>
+
+          <button ng-click="$ctrl.issueAsset()">Anlegen</button>
+          <button ng-click="$ctrl.issueMoreAssets()">Erhöhen</button>
+
+        </form>
+      </div>
+
+      <div ng-show="responseString">
+        <label>Response:</label>{{responseString}}
+      </div>
+
+      <table ng-show="responseObject">
+
+        <thead>
+          <tr><thKey</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr ng-repeat="(key, value) in responseObject">
+          <td>{{key}}</td>
+          <td>{{value}}</td>
+        </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+</div>
+
+</div>
