@@ -1,29 +1,13 @@
 <div class="container">
-  <div>
-    <h1>Multichain Client</h1>
-  </div>
-  <div class="panel panel-default">
-    <span ng-init="$ctrl.getInfo()">{{info}}</span>
-    <span ng-init="$ctrl.getBalances('18gKNFFDuJMbSjD6WTRNqiJbSQnf4A7Fd135C7')">{{balance}}</span>
-
-    <div class="panel-heading">Wallet</div>
-    <div class="panel-body">
-      <div class="form">
-        <label>Adresse</label>
-        <input class='form-control'>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="container">
   </br>
   <div class="panel panel-default">
     <div class="panel-body">
       <div class="form-inline">
         <div class="form-group">
           <label style="color:#5F5F5F">Wallet-ID:</label>
-          <input class='form-control'>
+          <input type="text" id="adressInput" class='form-control' ng-model="adress"/>
         </div>
+        <button type="submit" class="btn btn-primary" ng-click="$ctrl.getBalances(adress)">Abfragen</button> 
       </div>
       <br/>
       <hr>
@@ -32,7 +16,7 @@
             <h4 style="color:#5F5F5F">Wallet von:</h4>
           </div>
           <div class="col-sm-8">
-            <h4 style="color:#5F5F5F">Max Mustermann<h4>
+            <h4 style="color:#5F5F5F">{{name}}<h4>
           </div>
       </div>
       <div class="row">
@@ -40,7 +24,7 @@
             <h4 style="color:#5F5F5F">Anzahl der eigenen Aktien:</h4>
           </div>
           <div class="col-sm-8">
-            <h4 style="color:#5F5F5F">50.000<h4>
+            <h4 style="color:#5F5F5F">{{balance[0].qty}}<h4>
           </div>
       </div>
       <div class="row">
@@ -48,7 +32,7 @@
             <h4 style="color:#5F5F5F">Rechte:</h4>
           </div>
           <div class="col-sm-8">
-            <h4 style="color:#5F5F5F">Aktien kaufen, Aktien verkaufen<h4>
+            <h4 style="color:#5F5F5F">{{rights}}<h4>
           </div>
       </div>
       <hr>
