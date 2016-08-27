@@ -15,3 +15,65 @@
     </div>
   </div>
 </div>
+<div class="container">
+  </br>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="form-inline">
+        <div class="form-group">
+          <label style="color:#5F5F5F">Wallet-ID:</label>
+          <input class='form-control'>
+        </div>
+      </div>
+      <br/>
+      <hr>
+      <div class="row">
+          <div class="col-sm-4">
+            <h4 style="color:#5F5F5F">Wallet von:</h4>
+          </div>
+          <div class="col-sm-8">
+            <h4 style="color:#5F5F5F">Max Mustermann<h4>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-4">
+            <h4 style="color:#5F5F5F">Anzahl der eigenen Aktien:</h4>
+          </div>
+          <div class="col-sm-8">
+            <h4 style="color:#5F5F5F">50.000<h4>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-4">
+            <h4 style="color:#5F5F5F">Rechte:</h4>
+          </div>
+          <div class="col-sm-8">
+            <h4 style="color:#5F5F5F">Aktien kaufen, Aktien verkaufen<h4>
+          </div>
+      </div>
+      <hr>
+      <h3 style="color:#5F5F5F">Letzte Transaktionen</h3>
+      <br/>
+       <div class="row">
+            <div class="col-sm-6">
+                <div class="list-group">
+                  <a href="#" class="list-group-item" ng-repeat="transaction in transactions">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <p class="list-group-item-heading">Kontrahent: {{ transaction.contractingParty }}</p>
+                        <p class="list-group-item-text">Anzahl: {{ transaction.amount }}</p>
+                      </div>
+                      <div class="col-sm-6">
+                        <p class="list-group-item-text text-center" style="float:none">{{ transaction.timestamp }}</ph4>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            <div class="col-sm-6">
+              <span/>
+          </div>
+          </div>
+    </div>
+  </div>
+</div>
