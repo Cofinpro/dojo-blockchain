@@ -20,7 +20,7 @@ export default class IssueAssetController {
     });
   }
 
-  sendAssetFrom(requestData) {
+  sendAssetFrom() {
     var requestData = {
       from: this.$scope.fromAddress,
       to: this.$scope.toAddress,

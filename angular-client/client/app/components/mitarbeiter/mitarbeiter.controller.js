@@ -24,7 +24,7 @@ export default class MitarbeiterController {
     this.MultichainService.getTransactions(address).then((info) => {this.$scope.transactions = info;});
   }
 
-  sendAssetFrom(requestData) {
+  sendAssetFrom() {
     var requestData = {
       from: this.$scope.fromAddress,
       to: this.$scope.toAddress,
