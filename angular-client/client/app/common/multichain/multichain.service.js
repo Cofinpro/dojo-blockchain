@@ -23,6 +23,10 @@ class MultiChainService {
     return this.wrap(multichain.listAddressTransactions, {address: address});
   }
 
+  getAddresses() {
+    return this.wrap(multichain.getAddresses);
+  }
+
   sendAssetFrom(requestData) {
     return this.wrap(multichain.sendAssetFrom, requestData);
   }

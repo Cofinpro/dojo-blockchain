@@ -20,6 +20,18 @@ export default class IssueAssetController {
     });
   }
 
+  getAddresses() {
+    this.MultichainService.getAddresses().then((info) => {
+      if (typeof info === "string") {
+        this.$scope.responseString = info;
+      } else if (typeof info === "object") {
+        this.$scope.responseObject = info;
+      } else {
+        this.$scope.responseString = info;
+      }
+    });
+  }
+
   sendAssetFrom() {
     var requestData = {
       from: this.$scope.fromAddress,
