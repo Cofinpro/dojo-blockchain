@@ -1,7 +1,14 @@
-class MitarbeiterController {
-  constructor() {
-    this.name = 'home';
+export default class MitarbeiterController {
+  constructor($scope, MultichainService) {
+    this.MultichainService = MultichainService;
+    this.$scope = $scope;
+    $scope.getInfo = this.getInfo;
   }
+
+  getInfo(){
+    return this.MultichainService.getInfo();
+  }
+
 }
 
-export default MitarbeiterController;
+MitarbeiterController.$inject = ['$scope', 'MultichainService'];
