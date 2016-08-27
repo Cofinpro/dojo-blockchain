@@ -33,26 +33,25 @@ export default class MitarbeiterController {
   }
 
   showSellDialog() {
+    var MultichainService = this.MultichainService;
+    var $scope = this.$scope;
     var modalInstance = this.$uibModal.open({
-        template: require('./verkaufenDialog.html'),
-        scope: this.$scope
-      });
-    modalInstance.result.then(function(transaction) {
-      
-    }, function() {});
-  }
-
-  sendAssetFrom() {
-    var requestData = {
-      from: this.$scope.fromAddress,
-      to: this.$scope.toAddress,
-      asset: this.$scope.name,
-      qty: this.$scope.amount
-    };
-
-    this.MultichainService.sendAssetFrom(requestData).then((resp) => {
-      this.$scope.responseString = resp;
+      template: require('./verkaufenDialog.html'),
+      scope: this.$scope
     });
+    modalInstance.result.then(function (transaction) {
+        var requestData = {
+          from: $scope.adress,
+          to: transaction.target,
+          asset: "Cofinpro AG",
+          qty: transaction.amount
+        };
+        MultichainService.sendAssetFrom(requestData).then((resp) => {
+          this.$scope.responseString = resp;
+        });
+      }, function () {
+      }
+    );
   }
 
 }
