@@ -5,3 +5,6 @@ multichain/*/*
 
 !multichain/*.conf
 /.project
+.idea
+*.iml
+node-modules
