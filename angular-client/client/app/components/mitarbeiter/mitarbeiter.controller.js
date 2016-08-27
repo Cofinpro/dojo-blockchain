@@ -2,11 +2,11 @@ export default class MitarbeiterController {
   constructor($scope, MultichainService) {
     this.MultichainService = MultichainService;
     this.$scope = $scope;
-    $scope.getInfo = this.getInfo;
   }
 
   getInfo(){
-    return this.MultichainService.getInfo();
+    return this.MultichainService.getInfo()
+      .then((info) => {this.info = info;});
   }
 
 }
