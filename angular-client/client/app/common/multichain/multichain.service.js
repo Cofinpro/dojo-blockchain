@@ -28,7 +28,7 @@ class MultiChainService {
   }
 
   sendAssetFrom(requestData) {
-    return this.wrap(multichain.sendAssetFrom, requestData);
+    return this.wrap(multichain.sendAssetToAddress, requestData);
   }
 
   issueAsset(requestData) {
