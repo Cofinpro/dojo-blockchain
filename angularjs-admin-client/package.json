@@ -2,6 +2,7 @@
   "dependencies": {
     "angular": "^1.5.0",
     "angular-ui-router": "1.0.0-beta.1",
+    "multichain-node": "^1.8.1",
     "todomvc-app-css": "^2.0.4"
   },
   "devDependencies": {
