@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coding Dojo - Blockchain</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      body { font-family: Verdana, Helvetica, sans-serif;}
+      h1, h2, h3 {
+        font-family: Verdana, Helvetica, sans-serif;
+        font-size: 2.5em;
+      }
+      .remark-code, .remark-inline-code { font-family: Consolas, Courier; }
+      .remark-container { background-color: white; }
+      .remark-slide-content { font-size: 2em;}
+      .remark-slide-content:after {
+        content: ""; position: absolute;
+        top: 30px; right: 10px; height: 100px; width: 15%;
+        background-repeat: no-repeat; background-size: contain; background-image: url('img/logo_new.png');
+     }
+    </style>
+  </head>
+  <body onload="var slideshow = remark.create({ ratio : '16:9' });">
+    <textarea id="source">
+
+class: center, middle
+
+# Blockchain - Abschlusspräsentation
+
+---
+
+## Agenda
+
+- Was bisher geschah
+- Abbildung des Cofinpro-Aktienbuchs
+- Demo
+- Lessons learned
+
+---
+
+## Was bisher geschah:
+
+- getting started (Kampf gegen Netzwerk, VM, etc.)
+- erste schnelle Erfolge
+- das Tal der Tränen
+- Frontend-Bau und weitere Analysen
+
+---
+
+## Die Technologie
+
+- Blockchain:
+ * verteilte Datenbank, bestehend aus Kette von Datenblöcken
+ * Kette besteht aus Datenblöcken mit Prüfsummen
+ * Datenblöcke können beliebig sein, Fokus aber auf: Geschäftstransaktionen
+
+- MultiChain:
+ * erweitert Bitcoin um (mehrere) Assets
+ * Berechtigungskonzept
+
+---
+
+## Das Cofinpro-Aktienbuch
+
+- Cofinpro AG erzeugt Stammkapital, Aktien sind im Bestand
+- Mitarbeiter werden - nach Unterzeichnung der Aktionärsvereinbarung - zur Blockchain hinzugefügt
+- Gegen Bezahlung werden die Aktien den jeweiligen Mitarbeitern überwiesen
+- Handel kann nun statt finden:
+ * zwischen allen Mitgliedern der Blockchain
+ * mit der Cofinpro AG
+
+---
+
+## genutzte Features von MultiChain
+
+- native Unterstützung von Assets:<br>Handel von Aktien und nicht von Bitcoins
+- Beschränkung der kleinsten, handelbaren Einheit: 1 Stück
+- Berechtigungskonzept:
+ * private Blockchain
+ * Berechtigungen werden von Administratoren vergeben (bei Cofinpro: 1 Admin)
+- Darstellung des Aktienbuches, via MultiChain Explorer
+- Kapitalerhöhungen durch Admin möglich
+- dezentral: damit robuster gegen Ausfälle/ Datenverlust
+
+---
+
+class: center, middle
+
+# DEMO
+
+---
+
+## Lessons learned
+
+- unsere Aktionärsvereinbarung ist sehr speziell
+- Abbildungsversuche scheiterten:
+ * keine Lösung gefunden, die "nicht kooperierende" Mitarbeiter verhindert
+ * denkbare Lösungen schränkten freien Handel derart ein, dass kein Vorteil blieb<br>
+ → organisatorische & rechtliche Lösungen bleiben bestehen
+- wenige Frontends/ Clients für MultiChain
+- leichte Benutzbarkeit der Blockchain ist noch offen
+
+---
+
+class: center, middle
+
+# Fragen...?
+
+    </textarea>
+    <script type="text/javascript" src="remark-0.13.min.js">
+    </script>
+  </body>
+</html>
