@@ -7,7 +7,7 @@
           <label style="color:#5F5F5F">Wallet-ID:</label>
           <input type="text" id="adressInput" class='form-control' ng-model="adress"/>
         </div>
-        <button type="submit" class="btn btn-primary" ng-click="$ctrl.getBalances(adress)">Abfragen</button> 
+        <button type="submit" class="btn btn-primary" ng-click="$ctrl.loadUserData(adress)">Abfragen</button> 
       </div>
       <br/>
       <hr>
@@ -37,6 +37,7 @@
       </div>
       <hr>
       <h3 style="color:#5F5F5F">Letzte Transaktionen</h3>
+      <p> {{transactions}} </p>
       <br/>
        <div class="row">
             <div class="col-sm-6">
@@ -44,11 +45,12 @@
                   <a href="#" class="list-group-item" ng-repeat="transaction in transactions">
                     <div class="row">
                       <div class="col-sm-6">
-                        <p class="list-group-item-heading">Kontrahent: {{ transaction.contractingParty }}</p>
-                        <p class="list-group-item-text">Anzahl: {{ transaction.amount }}</p>
+                        <p class="list-group-item-heading">Kontrahent: {{ transaction.addresses[0] }}</p>
+                        <p class="list-group-item-text">Aktie: {{ transaction.balance.assets[0].name }}</p>
+                        <p class="list-group-item-text">Anzahl: {{ transaction.balance.assets[0].qty }}</p>
                       </div>
                       <div class="col-sm-6">
-                        <p class="list-group-item-text text-center" style="float:none">{{ transaction.timestamp }}</ph4>
+                        <p class="list-group-item-text text-center" style="float:none">{{ transaction.time }}</ph4>
                       </div>
                     </div>
                   </a>

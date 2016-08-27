@@ -19,6 +19,10 @@ class MultiChainService {
     return this.wrap(multichain.getAddressBalances, {address: address});
   }
 
+  getTransactions(address) {
+    return this.wrap(multichain.listAddressTransactions, {address: address});
+  }
+
   wrap(fnct, params) {
     var defer = this.$q.defer();
     fnct(params, (err, payload) => {
