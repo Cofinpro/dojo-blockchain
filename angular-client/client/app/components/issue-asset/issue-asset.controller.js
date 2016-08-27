@@ -20,6 +20,19 @@ export default class IssueAssetController {
     });
   }
 
+  sendAssetFrom(requestData) {
+    var requestData = {
+      from: this.$scope.fromAddress,
+      to: this.$scope.toAddress,
+      asset: this.$scope.name,
+      qty: this.$scope.amount
+    };
+
+    this.MultichainService.sendAssetFrom(requestData).then((resp) => {
+      this.$scope.responseString = resp;
+    });
+  }
+
   issueAsset() {
 
     var requestData = {
@@ -45,7 +58,7 @@ export default class IssueAssetController {
       asset: this.$scope.name,
       qty: this.$scope.amount,
       details: {
-        IssueMessage: "Weitere Cofinpro Aktien"
+        IssueMessage: "Cofinpro CAPS 2016"
       }
     };
 
