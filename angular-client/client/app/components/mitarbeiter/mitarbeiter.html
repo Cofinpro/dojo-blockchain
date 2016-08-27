@@ -1,20 +1,23 @@
 <div class="panel panel-default">
   <div class="panel-body">
+
     <div class="form-inline">
       <div class="form-group">
         <label style="color:#5F5F5F">Wallet-ID:</label>
-        <input type="text" id="adressInput" class='form-control' ng-model="adress"/>
+        <input type="text" id="adressInput" class='form-control' ng-model="adress" size="100"/>
       </div>
       <button type="submit" class="btn btn-primary" ng-click="$ctrl.loadUserData(adress)">Abfragen</button>
     </div>
+
     <br/>
     <hr>
+
     <div class="row">
       <div class="col-sm-4">
         <h4 style="color:#5F5F5F">Wallet von:</h4>
       </div>
       <div class="col-sm-8">
-        <h4 style="color:#5F5F5F">{{name}}<h4>
+        <h4 style="color:#5F5F5F">{{name}}</h4>
       </div>
     </div>
     <div class="row">
@@ -22,7 +25,7 @@
         <h4 style="color:#5F5F5F">Anzahl der eigenen Aktien:</h4>
       </div>
       <div class="col-sm-8">
-        <h4 style="color:#5F5F5F">{{balance[0].qty}}<h4>
+        <h4 style="color:#5F5F5F">{{balance.qty}}</h4>
       </div>
     </div>
     <div class="row">
@@ -30,10 +33,19 @@
         <h4 style="color:#5F5F5F">Rechte:</h4>
       </div>
       <div class="col-sm-8">
-        <h4 style="color:#5F5F5F">{{rights}}<h4>
+        <h4 style="color:#5F5F5F">{{rights}}</h4>
       </div>
     </div>
+
+
     <hr>
+    <div>
+
+      <input type="button" class="btn btn-primary" name="sell" value="Verkaufen" ng-click="$ctrl.showSellDialog()">
+    </div>
+
+    <hr/>
+
     <h3 style="color:#5F5F5F">Letzte Transaktionen</h3>
     <br/>
     <div class="row">
@@ -47,7 +59,7 @@
                 <p class="list-group-item-text">Anzahl: {{ transaction.balance.assets[0].qty }}</p>
               </div>
               <div class="col-sm-6">
-                <p class="list-group-item-text text-center" style="float:none">{{ transaction.time }}</ph4>
+                <p class="list-group-item-text text-center" style="float:none">{{ transaction.time }}</p>
               </div>
             </div>
           </a>

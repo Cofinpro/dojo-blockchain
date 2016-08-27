@@ -1,6 +1,6 @@
 let multichain = require('multichain-node')({
   port: 8080,
-  host: '192.168.90.215',
+  host: 'localhost',
   user: "multichainrpc",
   pass: "cofinpro"
 });
@@ -16,7 +16,7 @@ class MultiChainService {
   }
 
   getBalances(address) {
-    return this.wrap(multichain.getAddressBalances, {address: address});
+    return this.wrap(multichain.getTotalBalances, {address: address});
   }
 
   getTransactions(address) {

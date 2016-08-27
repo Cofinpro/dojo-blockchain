@@ -6,12 +6,14 @@ import AppComponent from './app.component';
 import 'normalize.css';
 import 'jquery';
 import 'bootstrap-loader';
+import uiBootstrap from 'angular-ui-bootstrap';
 
 angular.module('app', [
-    uiRouter,
-    Common,
-    Components
-  ])
+  uiRouter,
+  uiBootstrap,
+  Common,
+  Components
+])
   .config(($locationProvider) => {
     "ngInject";
     // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions

@@ -1,9 +1,11 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import uiBootstrap from 'angular-ui-bootstrap';
+
 import mitarbeiterComponent from './mitarbeiter.component';
 
 let mitarbeiterModule = angular.module('mitarbeiter', [
-  uiRouter
+  uiRouter, uiBootstrap
 ])
 
 .config(($stateProvider, $urlRouterProvider) => {
