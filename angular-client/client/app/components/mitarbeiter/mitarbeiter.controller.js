@@ -9,7 +9,7 @@ export default class MitarbeiterController {
   }
 
   getBalances(address){
-    this.MultichainService.getBalances('1AQGNgRTsmgo947vUqpjNjszfWK5bHra63o2kq').then((info) => {this.$scope.balance = info;});
+    this.MultichainService.getBalances(address).then((info) => {this.$scope.balance = info;});
   }
 
 }
