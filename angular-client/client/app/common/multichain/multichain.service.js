@@ -12,26 +12,24 @@ class MultiChainService {
   }
 
   getInfo() {
-    var defer = this.$q.defer();
-    multichain.getInfo((err, info) => {
-      if (err) {
-        defer.reject(err);
-      }
-      defer.resolve(info);
-    });
-    return defer.promise;
+    return this.wrap(multichain.getInfo, {});
   }
 
   getBalances(address) {
+    return this.wrap(multichain.getAddressBalances, {address: address});
+  }
+
+  wrap(fnct, params) {
     var defer = this.$q.defer();
-    multichain.getAddressBalances({address:address}, ((err, balance) => {
+    fnct(params, (err, payload) => {
       if (err) {
         defer.reject(err);
       }
-      defer.resolve(balance);
-    }));
+      defer.resolve(payload);
+    });
     return defer.promise;
   }
 }
+
 MultiChainService.$inject = ['$q'];
 export default MultiChainService;
