@@ -16,11 +16,15 @@ class MultiChainService {
   }
 
   getBalances(address) {
-    return this.wrap(multichain.getAddressBalances, {address: address});
+    return this.wrap(multichain.getTotalBalances, {address: address});
   }
 
   getTransactions(address) {
     return this.wrap(multichain.listAddressTransactions, {address: address});
+  }
+
+  getAddresses() {
+    return this.wrap(multichain.getAddresses);
   }
 
   sendAssetFrom(requestData) {
