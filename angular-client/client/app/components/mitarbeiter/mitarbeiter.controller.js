@@ -42,6 +42,19 @@ export default class MitarbeiterController {
     }, function() {});
   }
 
+  sendAssetFrom() {
+    var requestData = {
+      from: this.$scope.fromAddress,
+      to: this.$scope.toAddress,
+      asset: this.$scope.name,
+      qty: this.$scope.amount
+    };
+
+    this.MultichainService.sendAssetFrom(requestData).then((resp) => {
+      this.$scope.responseString = resp;
+    });
+  }
+
 }
 
 MitarbeiterController.$inject = ['$scope', 'MultichainService', '$uibModal'];

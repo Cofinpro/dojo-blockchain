@@ -20,6 +20,31 @@ export default class IssueAssetController {
     });
   }
 
+  getAddresses() {
+    this.MultichainService.getAddresses().then((info) => {
+      if (typeof info === "string") {
+        this.$scope.responseString = info;
+      } else if (typeof info === "object") {
+        this.$scope.responseObject = info;
+      } else {
+        this.$scope.responseString = info;
+      }
+    });
+  }
+
+  sendAssetFrom() {
+    var requestData = {
+      from: this.$scope.fromAddress,
+      to: this.$scope.toAddress,
+      asset: this.$scope.name,
+      qty: this.$scope.amount
+    };
+
+    this.MultichainService.sendAssetFrom(requestData).then((resp) => {
+      this.$scope.responseString = resp;
+    });
+  }
+
   issueAsset() {
 
     var requestData = {
@@ -45,7 +70,7 @@ export default class IssueAssetController {
       asset: this.$scope.name,
       qty: this.$scope.amount,
       details: {
-        IssueMessage: "Weitere Cofinpro Aktien"
+        IssueMessage: "Cofinpro CAPS 2016"
       }
     };
 
