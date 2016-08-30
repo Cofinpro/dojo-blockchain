@@ -2,7 +2,7 @@ export default class MitarbeiterController {
   constructor($scope, MultichainService, $uibModal) {
     this.MultichainService = MultichainService;
     this.$scope = $scope;
-    this.$scope.adress = '1Z8mBjdtUQ2VYj9ohMBLVEnWN7aiiM8ba2e7hL';
+      this.$scope.adress = '1Z8mBjdtUQ2VYj9ohMBLVEnWN7aiiM8ba2e7hL';
     this.$scope.transaction = {};
     this.$uibModal = $uibModal;
   }
